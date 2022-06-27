@@ -8,13 +8,24 @@ namespace ConsoleApp1
     public class Menu
     {
         Empresa empresa = new Empresa();
+
         public void MostrarMenuInicial()
         {
-            Console.WriteLine("1- Motorista.");
-            Console.WriteLine("2- Caminhão.");
-            Console.WriteLine("3- Viagem.");
-            string opcao = Console.ReadLine();
-            MostrarMenuCrud(opcao);       
+            do
+            {
+                string opcao = "";
+
+                Console.WriteLine("1- Motorista.");
+                Console.WriteLine("2- Caminhão.");
+                Console.WriteLine("3- Viagem.");
+                Console.WriteLine("x- Sair.");
+                if (opcao == "x")
+                    break;
+                opcao = Console.ReadLine();
+                MostrarMenuCrud(opcao);
+            }
+            while (true);
+           
         }
         public void MostrarMenuCrud(string opcao)
         {
@@ -54,7 +65,5 @@ namespace ConsoleApp1
                     break;                              
             }
         }
-    
-
     }
 }
